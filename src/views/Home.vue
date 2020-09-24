@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld />
+    <div class="button__group">
+      <Increment />
+      <Decrement />
+      <Reset />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import HelloWorld from "../components/HelloWorld";
+import Increment from "../components/Increment";
+import Decrement from "../components/Decrement";
+import Reset from "../components/Reset";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    Increment,
+    Decrement,
+    Reset,
+  },
+};
 </script>
+<style scoped>
+.button__group {
+  display: flex;
+  justify-content: center;
+}
+</style>

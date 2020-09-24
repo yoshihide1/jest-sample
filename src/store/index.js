@@ -3,13 +3,38 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+export const state = {
+  nowNumber: 0
+}
+export const mutations = {
+  increment(state) {
+    state.nowNumber++
   },
-  mutations: {
+  decrement(state) {
+    if (state.nowNumber <= 0) return
+    state.nowNumber--
   },
-  actions: {
-  },
-  modules: {
+  reset(state) {
+    state.nowNumber = 0
   }
+}
+export const actions = {
+  increment({ commit }) {
+    console.log('increment')
+    commit('increment')
+  },
+  decrement({ commit }) {
+    console.log('decrement')
+    commit('decrement')
+  },
+  reset({ commit }) {
+    console.log('reset')
+    commit('reset')
+  }
+}
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions
 })
